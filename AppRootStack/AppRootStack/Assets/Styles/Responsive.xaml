@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<?xaml-comp compile="true" ?>
+<ResourceDictionary
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <!--#region TYPES OF SPACES-->
+    <OnPlatform x:Key="idealSpace" x:TypeArguments="Thickness">
+        <On Platform="Android" Value="16,0" />
+        <On Platform="iOS" Value="18,0" />
+        <On Platform="UWP" Value="20,0" />
+    </OnPlatform>
+
+    <OnPlatform x:Key="mediumSpace" x:TypeArguments="Thickness">
+        <On Platform="Android" Value="23,0" />
+        <On Platform="iOS" Value="22,0" />
+        <On Platform="UWP" Value="24,0" />
+    </OnPlatform>
+
+    <OnPlatform x:Key="bigSpace" x:TypeArguments="Thickness">
+        <On Platform="Android" Value="32,0" />
+        <On Platform="iOS" Value="34,0" />
+        <On Platform="UWP" Value="36,0" />
+    </OnPlatform>
+    <!--#endregion-->
+
+
+    <!--#region SPACES Grid-->
+    <Style x:Key="GridIdealSpace" TargetType="Grid">
+        <Setter Property="Padding" Value="{DynamicResource idealSpace}" />
+    </Style>
+
+    <Style x:Key="GridMediumSpace" TargetType="Grid">
+        <Setter Property="Padding" Value="{DynamicResource mediumSpace}" />
+    </Style>
+
+    <Style x:Key="GridBigSpace" TargetType="Grid">
+        <Setter Property="Padding" Value="{DynamicResource bigSpace}" />
+    </Style>
+    <!--#endregion-->
+
+
+    <!--#region SPACES StackLayout-->
+    <Style x:Key="StackIdealSpace" TargetType="StackLayout">
+        <Setter Property="Padding" Value="{DynamicResource idealSpace}" />
+    </Style>
+
+    <Style x:Key="StackMediumSpace" TargetType="StackLayout">
+        <Setter Property="Padding" Value="{DynamicResource mediumSpace}" />
+    </Style>
+
+    <Style x:Key="StackBigSpace" TargetType="StackLayout">
+        <Setter Property="Padding" Value="{DynamicResource bigSpace}" />
+    </Style>
+    <!--#endregion-->
+</ResourceDictionary>

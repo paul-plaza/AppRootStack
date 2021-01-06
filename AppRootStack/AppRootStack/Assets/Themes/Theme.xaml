@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ResourceDictionary
+    x:Class="AppRootStack.Assets.Themes.Theme"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Source="/Assets/Styles/General.xaml"
+    mc:Ignorable="d">
+
+    <Color x:Key="BackgroundPrimaryColor">#ffffff</Color>
+    <Color x:Key="BackgroundSecondaryColor">#EDEDF9</Color>
+
+    <Color x:Key="BackgroundErrorColor">red</Color>
+
+    <Color x:Key="LineColor">#d8dbf7</Color>
+
+    <Color x:Key="PlaceholderColor">#b1b1b9</Color>
+
+    <Color x:Key="TitleLabelColor">#505676</Color>
+    <Color x:Key="CaptionLabelColor">#9393b9</Color>
+
+    <Color x:Key="NavigationActiveColor">#2186eb</Color>
+    <Color x:Key="NavigationNormalColor">#9393b9</Color>
+
+</ResourceDictionary>

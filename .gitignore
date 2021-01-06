@@ -3,3 +3,7 @@
 ################################################################################
 
 /.vs/AppRootStack
+/AppRootStack/AppRootStack/bin/Debug/netstandard2.0
+/AppRootStack/AppRootStack/obj
+/AppRootStack/AppRootStack.Android/bin/Debug
+/AppRootStack/AppRootStack.Android/obj

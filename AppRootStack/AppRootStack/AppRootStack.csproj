@@ -1,0 +1,65 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <ProduceReferenceAssembly>true</ProduceReferenceAssembly>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DebugType>portable</DebugType>
+    <DebugSymbols>true</DebugSymbols>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Assets\Fonts\Montserrat-Bold.ttf" />
+    <None Remove="Assets\Fonts\Montserrat-Medium.ttf" />
+    <None Remove="Assets\Fonts\Montserrat-Regular.ttf" />
+    <None Remove="Assets\Images\img-home-outline.png" />
+    <None Remove="Assets\Images\img-person-outline.png" />
+    <None Remove="Assets\Images\img-queues.png" />
+    <None Remove="Assets\Images\img-search-outline.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Assets\Fonts\Montserrat-Bold.ttf" />
+    <EmbeddedResource Include="Assets\Fonts\Montserrat-Medium.ttf" />
+    <EmbeddedResource Include="Assets\Fonts\Montserrat-Regular.ttf" />
+    <EmbeddedResource Include="Assets\Images\img-home-outline.png" />
+    <EmbeddedResource Include="Assets\Images\img-person-outline.png" />
+    <EmbeddedResource Include="Assets\Images\img-queues.png" />
+    <EmbeddedResource Include="Assets\Images\img-search-outline.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Com.Airbnb.Xamarin.Forms.Lottie" Version="4.0.8" />
+    <PackageReference Include="ReactiveUI.Fody" Version="13.0.27" />
+    <PackageReference Include="ReactiveUI.XamForms" Version="13.0.27" />
+    <PackageReference Include="Refit" Version="5.2.4" />
+    <PackageReference Include="Xamarin.Forms" Version="5.0.0.1874" />
+    <PackageReference Include="Xamarin.Essentials" Version="1.6.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Assets\Styles\General.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Assets\Styles\Responsive.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Assets\Styles\Texts.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="MainPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\CommonView\Maintenance\MaintenanceView.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\ListItemsView.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\Styles.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+</Project>

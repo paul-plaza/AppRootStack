@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<?xaml-comp compile="true" ?>
+<ResourceDictionary
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+
+    <!--#region TEXT SIZE [MATERIAL DESIGN]-->
+    <!--  H1-Light  -->
+    <x:Double x:Key="TxtSize_96">96</x:Double>
+    <!--  H2-Light  -->
+    <x:Double x:Key="TxtSize_60">60</x:Double>
+    <!--  H3-Regular  -->
+    <x:Double x:Key="TxtSize_48">48</x:Double>
+    <!--  H4-Regular  -->
+    <x:Double x:Key="TxtSize_34">34</x:Double>
+    <!--  H5-Regular  -->
+    <x:Double x:Key="TxtSize_24">24</x:Double>
+    <!--  H6-Medium, (Bold)  -->
+    <x:Double x:Key="TxtSize_20">20</x:Double>
+    <!--  Title-Medium, (Bold)  -->
+    <x:Double x:Key="TxtSize_18">18</x:Double>
+    <!--  SubTitle1-Regular, (Bold)  -->
+    <x:Double x:Key="TxtSize_16">16</x:Double>
+    <!--  SubTitle2-Medium, (Bold)  -->
+    <x:Double x:Key="TxtSize_14">14</x:Double>
+    <!--  Caption-Regular  -->
+    <x:Double x:Key="TxtSize_12">12</x:Double>
+    <!--  Overline-Regular  -->
+    <x:Double x:Key="TxtSize_10">10</x:Double>
+    <!--#endregion-->
+
+
+</ResourceDictionary>

@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<?xaml-comp compile="true" ?>
+<ResourceDictionary
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+
+    <Style x:Key="HeaderTitleText" TargetType="Label">
+        <Setter Property="FontSize" Value="{StaticResource TxtSize_24}" />
+        <Setter Property="FontFamily" Value="Bold" />
+        <Setter Property="Margin" Value="5" />
+        <Setter Property="TextColor" Value="{AppThemeBinding Light={StaticResource TitleLabelColor}, Dark={StaticResource TitleLabelColor}}" />
+    </Style>
+
+    <Style x:Key="TitleText" TargetType="Label">
+        <Setter Property="FontSize" Value="{StaticResource TxtSize_20}" />
+        <Setter Property="FontFamily" Value="Bold" />
+        <Setter Property="TextColor" Value="{AppThemeBinding Light={StaticResource TitleLabelColor}, Dark={StaticResource TitleLabelColor}}" />
+    </Style>
+
+    <Style x:Key="CaptionText" TargetType="Label">
+        <Setter Property="FontSize" Value="{StaticResource TxtSize_16}" />
+        <Setter Property="FontFamily" Value="Regular" />
+        <Setter Property="VerticalOptions" Value="Start" />
+        <Setter Property="VerticalTextAlignment" Value="Start" />
+        <Setter Property="TextColor" Value="{AppThemeBinding Light={StaticResource CaptionLabelColor}, Dark={StaticResource CaptionLabelColor}}" />
+    </Style>
+
+</ResourceDictionary>

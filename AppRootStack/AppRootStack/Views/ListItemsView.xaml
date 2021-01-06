@@ -1,0 +1,109 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<rxui:ReactiveContentPage
+    x:Class="AppRootStack.Views.ListItemsView"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:models="clr-namespace:AppRootStack.Models"
+    xmlns:rxui="clr-namespace:ReactiveUI.XamForms;assembly=ReactiveUI.XamForms"
+    xmlns:vms="clr-namespace:AppRootStack.ViewModels"
+    x:TypeArguments="vms:ListItemViewModel"
+    BackgroundColor="{StaticResource BackgroundPrimaryColor}">
+    <ContentPage.Resources>
+        <ResourceDictionary Source="Styles.xaml" />
+    </ContentPage.Resources>
+    <NavigationPage.TitleView>
+        <StackLayout
+            Padding="15,0"
+            HorizontalOptions="FillAndExpand"
+            VerticalOptions="FillAndExpand">
+            <SearchBar
+                BackgroundColor="{StaticResource BackgroundPrimaryColor}"
+                FontFamily="Regular"
+                FontSize="{StaticResource TxtSize_14}"
+                HorizontalOptions="FillAndExpand"
+                Keyboard="Chat"
+                Placeholder="Personas cerca de mi"
+                PlaceholderColor="{StaticResource PlaceholderColor}"
+                Text="{Binding SearchText}"
+                TextColor="{StaticResource PlaceholderColor}"
+                TranslationX="-10" />
+        </StackLayout>
+
+    </NavigationPage.TitleView>
+    <ContentPage.Content>
+        <Grid>
+
+            <RefreshView Command="{Binding RefreshDataCommand}" IsRefreshing="{Binding IsRefreshing}">
+                <CollectionView
+                    Header="{Binding .}"
+                    ItemsSource="{Binding DataList}"
+                    RemainingItemsThreshold="{Binding ItemTreshold}"
+                    RemainingItemsThresholdReachedCommand="{Binding ItemTresholdReachedCommand}">
+                    <CollectionView.HeaderTemplate>
+                        <DataTemplate>
+                            <StackLayout>
+                                <Label
+                                    Margin="20"
+                                    FontAttributes="Bold"
+                                    Style="{StaticResource HeaderTitleText}"
+                                    Text="Personas cercanas a ti" />
+                            </StackLayout>
+                        </DataTemplate>
+                    </CollectionView.HeaderTemplate>
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate x:DataType="models:Result">
+                            <Grid
+                                ColumnDefinitions="100,*"
+                                HorizontalOptions="StartAndExpand"
+                                RowDefinitions="75,1">
+                                <StackLayout Grid.Row="0" Padding="5">
+                                    <Image
+                                        HeightRequest="60"
+                                        HorizontalOptions="Center"
+                                        Source="{Binding Picture.Large}"
+                                        VerticalOptions="Center"
+                                        WidthRequest="60">
+                                        <Image.Clip>
+                                            <EllipseGeometry
+                                                Center="30,30"
+                                                RadiusX="30"
+                                                RadiusY="30" />
+                                        </Image.Clip>
+                                    </Image>
+                                </StackLayout>
+                                <StackLayout Grid.Row="0" Grid.Column="1">
+                                    <Label Style="{StaticResource TitleText}" Text="{Binding Name.Names}" />
+                                    <Label Style="{StaticResource CaptionText}" Text="{Binding Email}" />
+                                    <Label Style="{StaticResource CaptionText}" Text="{Binding Phone}" />
+                                </StackLayout>
+
+                                <BoxView
+                                    Grid.Row="3"
+                                    Grid.ColumnSpan="2"
+                                    HeightRequest="1"
+                                    Color="{StaticResource LineColor}" />
+                            </Grid>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                    <CollectionView.EmptyView />
+                </CollectionView>
+            </RefreshView>
+            <Label
+                BackgroundColor="{StaticResource BackgroundErrorColor}"
+                FontFamily="Medium"
+                HeightRequest="60"
+                IsVisible="{Binding HasMessage}"
+                LineBreakMode="WordWrap"
+                Opacity=".7"
+                Text="{Binding Message}"
+                TextColor="{StaticResource BackgroundPrimaryColor}"
+                VerticalOptions="Start"
+                WidthRequest="100" />
+
+            <ActivityIndicator
+                IsRunning="{Binding IsBusy}"
+                VerticalOptions="Center"
+                Color="{StaticResource NavigationActiveColor}" />
+        </Grid>
+    </ContentPage.Content>
+</rxui:ReactiveContentPage>
